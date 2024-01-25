@@ -2,15 +2,14 @@ package funciones
 
 import (
 	"fmt"
-	"time"
 )
 
+// en go  los middlewares tienen el patron de diseno de funciones de primer ordens
+// el middleware va a recibir una de estas funciones como parametro y va aretornar una funcion que recibe un string
 func Saludar(name string) {
-	fmt.Println(time.Now())
 	fmt.Println("Hola, ", name)
 }
 
 func Despedirse(name string) {
-	fmt.Println(time.Now())
 	fmt.Println("Adios", name)
 }
