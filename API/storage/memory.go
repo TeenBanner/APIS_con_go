@@ -11,7 +11,7 @@ type Memory struct {
 	Persons   map[int]model.Person
 }
 
-// NewMemory
+// NewMemorym
 func NewMemory() Memory {
 	persons := make(map[int]model.Person)
 
