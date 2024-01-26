@@ -3,6 +3,7 @@ package middleware
 import (
 	"log"
 	"net/http"
+	"res-API/authorization"
 	"time"
 )
 
@@ -35,7 +36,8 @@ func Authentication(f handler) handler {
 	return func(w http.ResponseWriter, r *http.Request) {
 		token := r.Header.Get("Authorization")
 
-		if token != "Un-Token-Muy-Seguro" {
+		_, err := authorization.ValidateToken(token)
+		if err != nil {
 			forbbiden(w, r)
 			return
 		}
