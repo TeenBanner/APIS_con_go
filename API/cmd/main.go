@@ -13,8 +13,8 @@ func main() {
 	mux := http.NewServeMux()
 
 	handler.RoutePerson(mux, &store)
-	log.Println("Servidor corriendo en http://127.0.0.1:8080")
-	err := http.ListenAndServe(":8080", mux)
+	log.Println("Servidor corriendo en http://127.0.0.1:3000")
+	err := http.ListenAndServe(":3000", mux)
 	if err != nil {
 		log.Printf("error en el servidor %v\n", err)
 	}
