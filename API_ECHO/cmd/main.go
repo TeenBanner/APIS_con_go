@@ -1,11 +1,16 @@
 package main
 
 import (
+	//propios
 	"log"
-	"net/http"
+
+	//core
 	"res-API/authorization"
 	"res-API/handler"
 	"res-API/storage"
+
+	// \DEPENDENCIAS
+	"github.com/labstack/echo/v4"
 )
 
 func main() {
@@ -17,13 +22,15 @@ func main() {
 
 	store := storage.NewMemory()
 
-	mux := http.NewServeMux()
+	e := echo.New()
 
-	handler.RoutePerson(mux, &store)
-	handler.RouteLogin(mux, &store)
+	// mux := http.NewServeMux()
 
-	log.Println("Servidor corriendo en http://127.0.0.1:3000")
-	err = http.ListenAndServe("192.168.5.206:3000", mux)
+	handler.RoutePerson(e, &store)
+	handler.RouteLogin(e, &store)
+
+	log.Println("Servidor corriendo en http://127.0.0.1:8080")
+	err = e.Start(":3000")
 	if err != nil {
 		log.Printf("error en el servidor %v\n", err)
 	}

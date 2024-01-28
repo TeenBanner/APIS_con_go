@@ -37,7 +37,7 @@ func main() {
 	// ejemplo controlar panic
 	persons.GET("/dividir", dividir)
 
-	e.Start(":8080")
+	e.Start("192.168.5.206:8080")
 
 }
 
