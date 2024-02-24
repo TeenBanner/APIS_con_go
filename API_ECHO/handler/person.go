@@ -26,7 +26,8 @@ func (p *person) create(c echo.Context) error {
 	err := c.Bind(&data)
 
 	if err != nil {
-		return c.JSON(http.StatusBadRequest, map[string]string{"status": "Error", "message": "Request Mal estructurada"})
+		response := newResponse(Error, "Respuesta mal estructurada", err)
+		return c.JSON(http.StatusBadRequest, response)
 	}
 
 	err = p.storage.Create(&data)

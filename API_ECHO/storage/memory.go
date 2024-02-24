@@ -14,7 +14,6 @@ type Memory struct {
 // NewMemorym
 func NewMemory() Memory {
 	persons := make(map[int]model.Person)
-
 	return Memory{
 		currentID: 0,
 		Persons:   persons,

@@ -30,11 +30,12 @@ func RoutePerson(e *echo.Echo, storage Storage) {
 
 }
 
-// ROuteLogin
+// RouteLogin
+/*
 func RouteLogin(e *echo.Echo, storage Storage) {
 	h := newLogin(storage)
 
 	e.Use(middlewares.Log)
 
 	e.POST("/v2/login", h.login)
-}
+} */

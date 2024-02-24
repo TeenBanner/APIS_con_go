@@ -27,9 +27,9 @@ func main() {
 	// mux := http.NewServeMux()
 
 	handler.RoutePerson(e, &store)
-	handler.RouteLogin(e, &store)
+	// handler.RouteLogin(e, &store)
 
-	log.Println("Servidor corriendo en http://127.0.0.1:8080")
+	log.Println("Servidor corriendo en http://127.0.0.1:3000")
 	err = e.Start(":3000")
 	if err != nil {
 		log.Printf("error en el servidor %v\n", err)
